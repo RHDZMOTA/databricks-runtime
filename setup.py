@@ -54,7 +54,7 @@ setup(
     },
     package_data={
         "": [
-            "runtime-metadata.json"
+            "runtime/runtime-metadata.json"
         ]
     },
     packages=find_packages(where='src'),
