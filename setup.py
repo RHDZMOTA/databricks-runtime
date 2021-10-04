@@ -1,6 +1,10 @@
+import os
 import json
 from typing import Dict, List, Optional, Tuple
 from setuptools import setup, find_packages
+
+
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 def get_readme():
@@ -9,7 +13,8 @@ def get_readme():
 
 
 def get_metadata(overwrite_version: Optional[int] = None) -> Tuple[str, Dict]:
-    with open("src/runtime/runtime-metadata.json", "r") as file:
+    metadata_path = os.path.join(BASE_PATH, "src/runtime/runtime-metadata.json")
+    with open(metadata_path, "r") as file:
         metadata = json.loads(file.read())
     current_build_version = overwrite_version or metadata["current_build"]
     return current_build_version, metadata.get("supported_runtimes", {}).get(current_build_version)
@@ -39,7 +44,7 @@ RUNTIME_PYMIN, RUNTIME_PYMAX = get_python_versions(python_version=RUNTIME_METADA
 
 setup(
     name="databricks-runtime",
-    version=f"{RUNTIME_VERSION}.dev2",
+    version=f"{RUNTIME_VERSION}.dev4",
     description="Databricks LTS Python Runtime",
     long_description=RUNTIME_README,
     long_description_content_type='text/markdown',

@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+import importlib.resources
 from datetime import datetime
 
 
@@ -10,8 +11,7 @@ logger = logging.getLogger(__name__)
 DATABRICKS_RUNTIME_PATH = os.path.dirname(os.path.abspath(__file__))
 
 # Runtime metadata
-DATABRICKS_RUNTIME_METADATA_PATH = os.path.join(DATABRICKS_RUNTIME_PATH, "runtime-metadata.json")
-with open(DATABRICKS_RUNTIME_METADATA_PATH, "r") as file:
+with importlib.resources.open_text(__package__, "runtime-metadata.json") as file:
     DATABRICKS_RUNTIME_METADATA = json.loads(file.read())
 
 # Runtime version
