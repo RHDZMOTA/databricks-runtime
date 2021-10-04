@@ -7,6 +7,32 @@ databricks runtimes](https://docs.databricks.com/release-notes/runtime/releases.
 This should facilitate adding the LTS dependencies in external python projects,
 specially when building python wheels.
 
+## Installation
+
+Install via pip:
+
+```
+pip install databricks-runtime==LTS7.3-V1
+```
+
+## Development
+
+Clone this repo and install locally with:
+
+```commandline
+$ pip install -e .
+```
+
+Install the development reqs:
+
+```commandline
+$ pip install -r requirements-development.txt
+```
+
+Tools & common scripts:
+* Style check: `bash check-style.sh`
+* Type check: `bash check-types.sh`
+* Profiles: `bash profiler.sh`
 
 ## Supported LTS Versions
 
