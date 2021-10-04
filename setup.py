@@ -38,8 +38,8 @@ RUNTIME_REQUIREMENTS = get_requirements(key=RUNTIME_VERSION)
 RUNTIME_PYMIN, RUNTIME_PYMAX = get_python_versions(python_version=RUNTIME_METADATA["python_version"])
 
 setup(
-    name="runtime",
-    version=f"DATABRICKS{RUNTIME_VERSION}-V1",
+    name="databricks-runtime",
+    version=f"LTS{RUNTIME_VERSION}-V1",
     description="Databricks LTS Python Runtime",
     long_description=RUNTIME_README,
     long_description_content_type='text/markdown',
