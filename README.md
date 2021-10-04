@@ -12,7 +12,7 @@ specially when building python wheels.
 Install via pip:
 
 ```
-pip install databricks-runtime==LTS7.3-V1
+pip install databricks-runtime==7.3.dev1
 ```
 
 ## Development
